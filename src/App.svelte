@@ -5,6 +5,7 @@
 
 <style>
   h1 {
-    color: purple;
+    color: darkslategray;
+    font-family: sans-serif;
   }
 </style>
