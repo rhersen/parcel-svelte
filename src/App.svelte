@@ -16,16 +16,23 @@
   function handleClick() {
     promise = getRandomNumber();
   }
+
+  function announcements(response) {
+    return response ? JSON.parse(response).TrainAnnouncement : []
+  }
 </script>
 
-<button on:click={handleClick}>
-  generate random number
-</button>
+<button on:click={handleClick}>northbound</button>
 
 {#await promise}
   <p>...waiting</p>
-{:then number}
-  <p>The number is {number}</p>
+{:then response}
+  <p>There are {announcements(response).length} announcements</p>
+  <ol>
+    {#each announcements(response) as announcement}
+      <li>{announcement.AdvertisedTrainIdent} {announcement.ActivityType} {announcement.LocationSignature}</li>
+    {/each}
+  </ol>
 {:catch error}
   <p style="color: red">{error.message}</p>
 {/await}

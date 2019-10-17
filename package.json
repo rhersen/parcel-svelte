@@ -8,7 +8,9 @@
     "postbuild": "cd functions/node-fetch && npm install"
   },
   "browserslist": [
-    "last 1 chrome versions"
+    ">2%",
+    "not dead",
+    "not op_mini all"
   ],
   "main": "index.js",
   "author": "Timothy Johnson",
