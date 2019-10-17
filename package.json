@@ -4,7 +4,8 @@
   "description": "Example Parcel Svelte setup",
   "scripts": {
     "start": "parcel src/index.html",
-    "build": "parcel build --no-source-maps src/index.html"
+    "build": "parcel build --no-source-maps src/index.html",
+    "postbuild": "cd functions/node-fetch && npm install"
   },
   "browserslist": [
     "last 1 chrome versions"
