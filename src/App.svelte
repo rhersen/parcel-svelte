@@ -28,11 +28,11 @@
   <p>...waiting</p>
 {:then response}
   <p>There are {announcements(response).length} announcements</p>
-  <ol>
+  <ul>
     {#each announcements(response) as announcement}
       <li>{announcement.AdvertisedTrainIdent} {announcement.ActivityType} {announcement.LocationSignature}</li>
     {/each}
-  </ol>
+  </ul>
 {:catch error}
   <p style="color: red">{error.message}</p>
 {/await}
